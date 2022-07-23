@@ -29,20 +29,26 @@ p.large {
 
 /* BUTTONS */
 button.primary {
-  background-color: #424242;
+  background-color: #1b1b1b;
   color: white;
-  padding: 0.675rem 2.5rem;
+  font-weight: bold;
+  padding: 0.675rem 2.5rem; 
   border-radius: 0.5rem;
   border-style: none;
   border: 1px solid transparent;
   font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to top, #4d4d4d, #1b1b1b, #1b1b1b, #4d4d4d);
 }
 
 button.primary:hover {
-  border: 1px solid #424242;
+  border: 1px solid #e0e0e0;
   color: #424242;
+  font-weight: bold;
   background-color: white;
   font-family: Arial, Helvetica, sans-serif;
+  box-shadow: .5px 3px 5px #b6b6b6;
+  
+  background-image: linear-gradient(to top, #e0dfdf , white, white, white, #e0dfdf)
 }
 
 /* NAV */
@@ -63,17 +69,42 @@ a {
 
 nav {
   height: 72px;
-  background-color: #000;
+  background-color: #1b1b1b;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 15vw;
+  border-bottom: var(--ln)
 }
 
-nav .links {
+nav > ul.links {
+  
+  height: 100%;
   display: flex;
   gap: 3rem;
+  
+}
+
+nav > ul.links > * > * {
+  padding: 1.5rem;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  
+}
+
+nav > li.links > *:hover {
+  display: flex;
+  gap: 3rem;
+  height: 72px;
+  
+}
+
+
+nav .links a:hover{
+color: #1b1b1b;
+background-color: white;
 }
 
 /* HERO */
@@ -145,7 +176,20 @@ display: flex;
 
 .moreimage{
   padding-left: 32.5rem;
+  }
+
+.arrow
+{
+  position: relative;
+  bottom: -2rem;
+  left: 50%;
+  margin-left:-20px;
+  width: 40px;
+  height: 40px;
+  background-image: url(images/arrow21.png);
+  background-size: contain;
 }
+
 /* MAIN (case studies) */
 
 #case-studies {
@@ -201,18 +245,54 @@ font-family: Arial, Helvetica, sans-serif;
 }
 
 #NAA{
+  border: 1px solid #7dddf8;
   background-color: #027FA2;
   max-width: fit-content;
+  background-image: linear-gradient(to top, #026e8b,#027FA2, #027FA2, #027FA2, #039ec9);
+}
+
+
+#NAA.primary:hover {
+  border: 1px solid #027FA2;
+  color: #027FA2;
+  box-shadow: 3px 3px 3px #adadad;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to top,#a4deeebe, white,white, white, white, white, #a4deeebe);
 }
 
 #FFH{
+  border: 1px solid #9aa9ff;z
   background-color: #42496F;
   max-width: fit-content;
+  background-image: linear-gradient(to top, #373d5c, #42496F, #42496F, #42496F, #8090e9);
 }
 
+
+#FFH.primary:hover {
+  border: 1px solid #42496F;
+  color: #42496F;
+  box-shadow: 1px 3px 3px #adadad;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to top, #a1adf0be,white,white, white, white, white, #a1adf0be);
+}
+
+
 #WIRES{
+  border: 1px solid #9fff8ec9;
   background-color: #34542E;
   max-width: fit-content;
+  background-image: linear-gradient(to top, #23381f, #34542E, #34542E, #34542E, #78b46d);
+}
+
+#WIRES.primary:hover {
+  border: 1px solid #34542E;
+  color: #34542E;
+  box-shadow: 1px 3px 3px #adadad;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to top, #9bcf92,white,white, white, white, white, #9bcf92)
 }
 
 #case-studies .case-study .NAAimage {
