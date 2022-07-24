@@ -1,6 +1,7 @@
 console.log("Your index.js file is loaded correctly!");
 
 
+
 var VanillaTilt = (function () {
   'use strict';
   
@@ -513,3 +514,14 @@ var VanillaTilt = (function () {
   
   }());
 
+  $('a[href*="#"]').on('click', function (e) {
+    e.preventDefault()
+  
+    $('html, body').animate(
+      {
+        scrollTop: $($(this).attr('href')).offset().top,
+      },
+      100000,
+      'linear'
+    )
+  })
