@@ -189,6 +189,60 @@ background-color: white;
 	background:white
 }
 
+#burger {
+  display: none;
+}
+
+#burger p {
+  transform: rotate(90deg);
+}
+
+@media only screen and (max-width: 960px) {
+  nav .links a {
+    display: none;
+  }
+  
+  nav .links #burger {
+    border-right: var(--ln);
+    display: inherit;
+  }
+}
+
+/* MODAL */
+#modal-menu {
+  opacity: 1;
+  position: fixed;
+  top: 96px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--clr-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#modal-menu.hidden {
+  opacity: 0;
+  top: 200vh;
+}
+
+#modal-menu h2 {
+  padding: 2rem 6rem;
+  border-radius: 24rem;
+  border: 1px solid var(--clr-light);
+  transition: 400ms;
+}
+
+#modal-menu h2:hover {
+  border: 1px solid var(--clr-primary);
+  transform: scale(1.2);
+  box-shadow: 0 0 56px rgba(255,255,255,0.06);
+}
+
+
 /* HERO */
 #hero {
 /*   max-width: 1600px; */
@@ -275,12 +329,15 @@ display: flex;
 
 /* MAIN (case studies) */
 
+
 #case-studies {
   display: flex;
   padding: var(--page-margin);
   flex-direction: column;
   gap: 8rem;
 }
+
+
 
 #case-studies .case-study {
   border: var(--ln);
@@ -298,6 +355,17 @@ display: flex;
   flex: 1; /* this forces all immediate children of the case study class to share an even amount of space, in this case a 50/50 split */
   min-height: 100%;
 }
+
+@media screen and (max-width: 960px) {
+  #case-studies .case-study {
+    flex-direction: column;
+  }
+
+  #case-studies .case-study:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+}
+
 
 #case-studies .case-study .info {
   padding: 4rem;
@@ -378,7 +446,7 @@ font-family: Arial, Helvetica, sans-serif;
   background-image: linear-gradient(to top, #9bcf92,white,white, white, white, white, #9bcf92)
 }
 
-#case-studies .case-study .NAAimage {
+#NAAimage {
 
   transform: scale(1.35) translate( 1rem, 2rem); /* this is how we get that nice overlap effect */
 /*   background-image: url('...') */ /* Add your images here */
@@ -388,7 +456,8 @@ background-repeat: no-repeat;
 
 }
 
-#case-studies .case-study .FFHimage {
+
+#FFHimage {
 
   transform: scale(1.35) translate( -2rem, 2rem); /* this is how we get that nice overlap effect */
 /*   background-image: url('...') */ /* Add your images here */
@@ -397,7 +466,7 @@ background-size: contain;
 background-repeat: no-repeat;
 
 }
-#case-studies .case-study .WIRESimage {
+#WIRESimage {
 
   transform: scale(1.35) translate( 2rem, 2rem); /* this is how we get that nice overlap effect */
 /*   background-image: url('...') */ /* Add your images here */
@@ -407,9 +476,7 @@ background-repeat: no-repeat;
 
 }
 
-.background {
-  background-image: url(images/bluebackground.png);
-}
+
 
 footer {
   height: 250px;
@@ -446,32 +513,5 @@ footer .logo {
   font-size: 20px;
 }
 
-@media only screen and (max-width: 1000px) {
-.nav {
-  display: none;
-}
 
-}
 
-@media only screen and (max-width: 600px) {
-  .nav {
-    position: static;
-    margin: 20px;
-  }
-  #hero {
-    grid-template-areas:
-    "hero";
-  }
-  #categoryGrid {
-    grid-template-rows: 300px 300px 300px 300px 300px;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "case-studies"
-      
-    ;
-  }
-  .footer{
-    position: static;
-    margin: 20px;
-  }
-}
