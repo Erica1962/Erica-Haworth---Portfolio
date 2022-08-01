@@ -29,7 +29,9 @@ p.large {
 
 /* BUTTONS */
 button.primary {
+  
   background-color: #1b1b1b;
+  
   color: white;
   font-weight: bold;
   padding: 0.675rem 2.5rem; 
@@ -302,6 +304,8 @@ display: flex;
 
 
 #more a {
+  display:flex;
+  align-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 300;
@@ -312,6 +316,8 @@ display: flex;
 }
 
 .moreimage{
+  display: flex;
+  align-content: center;
   padding-left: 32.5rem;
   }
 
